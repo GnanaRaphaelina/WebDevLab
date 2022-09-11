@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <script>
+        var student = [{name:'John',r_num:'123',dob:'20-apr-1995'},{name:'Joseph',r_num:'456',dob:'05-jan-1998'},{name:'rebecca',r_num:'789',dob:'27-mar-2003'},{name:'jaedon',r_num:'342',dob:'23-nov-2018'}]
+        document.getElementById('one').innerHTML="<strong>Students born before 2000</strong>"
+        document.getElementById('two').innerHTML = "<strong>Students born after 2000</strong>"
+        for (var i=0;i<student.length;i++){
+            if (parseInt(student[i]['dob'].slice(7))>2000){
+                document.getElementById('two').innerHTML+="<br>"+student[i]['name']+"'s Register Number is "+student[i]['r_num'];
+
+            }
+            else{
+                document.getElementById('one').innerHTML+="<br>"+student[i]['name']+"'s Register Number is "+student[i]['r_num'];
+
+            }
+        }
+    </script>
+</body>
+</html>

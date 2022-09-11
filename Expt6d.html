@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #car{
+            position: absolute;
+        }
+        button{
+            bottom: 0px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id='car' src="ChevyCruze.jpg" width="400px" height="260px"><br><br>
+    <button type="button" onclick="stop()">Stop</button>
+    <button type="button" onclick="init()">Move</button>
+    <script>
+        function init(){
+            imgObj = document.getElementById('car');
+            imgObj.style.position = 'relative';
+            imgObj.style.left='0px';
+            moveRight();
+        }
+        function moveRight(){
+            imgObj.style.left = parseInt(imgObj.style.left)+1+'px';
+            animate = setTimeout(moveRight,10); //call moveRight in 20msec
+        }
+        function stop(){
+            clearTimeout(animate);
+            imgObj.style.left = '0px';
+        }
+        window.onload = init();
+    </script>
+</body>
+</html>

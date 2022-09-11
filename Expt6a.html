@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="digiclck()">
+    <h1>Digital Clock!</h1>
+<span id="time"></span>
+<script>
+    function digiclck(){
+    var d=new Date()
+    h=d.getHours()
+    m=d.getMinutes()
+    s=d.getSeconds()
+    m=check(m)
+    s=check(s)
+    document.getElementById('time').innerHTML = h+":"+m+":"+s
+    setTimeout(digiclck,1000)
+}
+    function check(i){
+        if (i<10){
+            return "0"+i
+        }
+        else{
+            return i
+        }
+    }
+</script>
+</body>
+</html>
