@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>;
+    <script>
+        $(document).ready(function(){
+            
+            $('#btn1').click(function(){
+                function checkIfComplete(){
+                    if (isComplete == false){
+                        isComplete==true;
+                    }else{
+                        //place='Second';
+                    }
+                }
+                var carWidth = $('#car1').width();
+                var raceTrackWidth=$(window).width()-carWidth;
+
+                var raceTime1 = Math.floor((Math.random()*5000)+1);
+                var raceTime2 = Math.floor((Math.random()*5000)+1);
+                var isComplete=false;
+
+                $('#car1').animate({
+                    left: raceTrackWidth
+                }, raceTime1,function(){
+                    checkIfComplete();
+                    $('#car1').fadeTo('slow',0.15)
+                
+            })
+            $('#car2').animate({
+                    left: raceTrackWidth
+                }, raceTime2,function(){
+                    checkIfComplete();
+                    $('#car2').fadeTo('slow',0.15)
+                
+            })
+            $('#btn2').click(function(){
+                $('.Car').css('left','0')
+                $('.Car').css('opacity','1')
+             
+            });
+        });
+    })
+       
+    </script>
+</head>
+<body>
+    <div style="width:100%;height:270px;background-color: black;border:3px dashed white;position:relative;left:0;top:0;" id="box1"><div id='car1' style="position: absolute;left:0;top:0;" class="Car"><img src="car5race.jpg" style="height:250px;width:400px"></div></div>
+    <div style="width:100%;height:270px;background-color: black;border:3px dashed white;position: relative; left: 0;top: 0;" id="box2"><div id='car2' style="position: absolute;left:0;top:0;" class="Car"><img src="car6race.jpg" style="height:250px;width:400px"></div></div>
+    <br><button id="btn1">Start</button>
+    <button id="btn2">Reset</button>
+    </body>
+</html>
