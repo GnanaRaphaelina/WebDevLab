@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body ng-app="">
+    <h1>Registration Form</h1>
+    <form name="myform">
+        Name: <input type="text" name="myName" ng-model="name" required>
+        <span style="color:red" ng-show="myform.myName.$dirty && myform.myName.$invalid">
+        Name is required.</span>
+        <br><br>
+        Email: <input type="email" name="email" ng-model="useremail" required>
+        <span style="color:red" ng-show="myform.email.$dirty && myform.email.$error.required">
+        Email is required</span>
+        <span style="color:red" ng-show="myform.email.$dirty && myform.email.$error.email">
+        Invalid Email</span>
+        <br><br>
+        <input type="checkbox" name="agree" required>I agree to follow the terms and conditions displayed for the contest.<br><br>
+        <button ng-disabled="myform.name.$invalid || myform.email.$invalid" ng-click="submit()">
+            Register
+        </button>
+    </form>
+    
+</body>
+</html>

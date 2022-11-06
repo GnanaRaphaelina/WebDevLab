@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app = angular.module("myApp",["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/",{
+                templateUrl:"infostu.html"
+            })
+            .when("/student1",{
+                templateUrl:"student1.html"
+            })
+            .when("/student2",{
+                templateUrl:"student2.html"
+            })
+            .when("/student3",{
+                templateUrl:"student3.html"
+            })
+            .when("/student4",{
+                templateUrl:"student4.html"
+            })
+            .when("/student5",{
+                templateUrl:"student5.html"
+            })
+            .otherwise({redirectTo:'/'})
+        })
+    </script>
+</head>
+<body ng-app="myApp">
+    <h1>Student Profile...</h1>
+    <p>
+        <a href="#/!">HOME</a>
+        <a href="#!student1">URK20CS3001</a>
+    <a href="#!student2">URK20CS3002</a>
+    <a href="#!student3">URK20CS3003</a>
+    <a href="#!student4">URK20CS3004</a>
+    <a href="#!student5">URK20CS3005</a></p>
+    <div ng-view></div>
+</body>
+</html>

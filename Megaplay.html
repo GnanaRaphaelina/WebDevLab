@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/megaplay" method="post">
+        <h1>MegaPlay Registration Form</h1><br><br>
+        Name:<input type="text" name="nm"><br><br>
+        Register Number:<input type="text" name="reg"><br><br>
+        Year of Study:<input type="number" name="year">
+        <br><br>
+        Department:<select name="dept">
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>Media</option>
+            <option>Mechanical</option>
+        </select>
+        Event(Any one): <input type="checkbox" name="eve[]" value="musician">musician
+        <input type="checkbox" name="eve[]" value="singing">singing
+        <input type="checkbox" name="eve[]" value="choreography">choreography
+        <input type="checkbox" name="eve[]" value="finance">finance
+        <input type="checkbox" name="eve[]" value="purchase">purchase
+        <input type="checkbox" name="eve[]" value="volunteer">volunteer
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
